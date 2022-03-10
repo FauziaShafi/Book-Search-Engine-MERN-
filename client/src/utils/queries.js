@@ -4,19 +4,18 @@ export const GET_ME = gql`
   query tech {
     me {
       _id
-      name
+      username
+      email
+      bookCount
+      saveBooks {
+          bookId
+          authors
+          description
+          image
+          link
+          title
+      }
     }
   }
 `;
 
-export const QUERY_MATCHUPS = gql`
-  query matchups($_id: String) {
-    matchups(_id: $_id) {
-      _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
-    }
-  }
-`;
